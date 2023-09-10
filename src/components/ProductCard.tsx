@@ -2,7 +2,6 @@ import { IProduct } from '@/types/globalTypes';
 import { toast } from './ui/use-toast';
 import { Button } from './ui/button';
 import { Link } from 'react-router-dom';
-import { useAppDispatch } from '@/redux/hooks';
 import {
   useCreateCurrentlyReadingMutation,
   useCreateWishListMutation,
@@ -29,7 +28,6 @@ export default function ProductCard({ product }: IProps) {
   };
   const handleCreateWishList = async () => {
     const { data } = await createWishList(product);
-    console.log(data);
     setTimeout(() => {
       if (data?.success === true) {
         toast({

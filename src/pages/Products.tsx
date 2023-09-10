@@ -1,27 +1,16 @@
 import ProductCard from '@/components/ProductCard';
 import { Button } from '@/components/ui/button';
-import { Label } from '@/components/ui/label';
-import { Slider } from '@/components/ui/slider';
-import { Switch } from '@/components/ui/switch';
-import { useToast } from '@/components/ui/use-toast';
 import { useGetBooksQuery } from '@/redux/features/bookCatalog/bookApis';
-import {
-  setPriceRange,
-  toggleState,
-} from '@/redux/features/bookCatalog/bookCatalogSlice';
-import { useAppDispatch, useAppSelector } from '@/redux/hooks';
+
 import { IProduct } from '@/types/globalTypes';
-import { SetStateAction, useEffect, useState } from 'react';
+import { SetStateAction, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function Products() {
   const [search, setSearch] = useState('');
   const { data } = useGetBooksQuery(search, {
     refetchOnMountOrArgChange: true,
-    // pollingInterval: 2000,
   });
-
-  // console.log(data);
 
   const handleSearch = (e: { target: { value: SetStateAction<string> } }) => {
     setSearch(e.target.value);

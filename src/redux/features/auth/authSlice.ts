@@ -15,7 +15,7 @@ const bookCatalogSlice = createSlice({
   name: 'bookCatalog',
   initialState,
   reducers: {
-    toggleState: (state, action: PayloadAction) => {
+    toggleState: (state) => {
       state.status = !state.status;
     },
     setPriceRange: (state, action: PayloadAction<number>) => {

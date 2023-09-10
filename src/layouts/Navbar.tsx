@@ -9,13 +9,7 @@ import {
   DropdownMenuTrigger,
   DropdownMenuContent,
 } from '../components/ui/dropdown-menu';
-import { HiOutlineSearch } from 'react-icons/hi';
-import { useAppDispatch, useAppSelector } from '@/redux/hooks';
-
-import { setUser } from '@/redux/features/user/userSlice';
-import { useSearchTermQuery } from '@/redux/features/bookCatalog/bookApis';
 import { useEffect, useState } from 'react';
-import { IProduct } from '@/types/globalTypes';
 
 export default function Navbar() {
   const [userTokent, setUserToken] = useState<string | null>('');

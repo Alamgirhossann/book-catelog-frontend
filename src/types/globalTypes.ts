@@ -5,6 +5,6 @@ export interface IProduct {
   genre: string;
   publicationYear: string;
   reviews?: string[];
-  finish: boolean;
+  finish?: boolean;
   creator?: any;
 }

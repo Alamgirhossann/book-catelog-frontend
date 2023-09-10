@@ -10,7 +10,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 export default function ProductDetails() {
   const { id } = useParams();
   const { data } = useGetSingleBookQuery(id);
-  const [deleteBook, { isLoading }] = useDeleteBookMutation();
+  const [deleteBook] = useDeleteBookMutation();
   const navigate = useNavigate();
 
   const handleDeleteBook = () => {

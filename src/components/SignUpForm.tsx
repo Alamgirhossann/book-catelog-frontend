@@ -8,10 +8,8 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { useForm } from 'react-hook-form';
 import { FcGoogle } from 'react-icons/fc';
-import { useAppDispatch } from '@/redux/hooks';
 import { useSignupMutation } from '@/redux/features/auth/authApis';
 import { useNavigate } from 'react-router-dom';
-// import { createUser } from '@/redux/features/user/userSlice';
 
 type UserAuthFormProps = React.HTMLAttributes<HTMLDivElement>;
 

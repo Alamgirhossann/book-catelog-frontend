@@ -5,15 +5,13 @@ import { IProduct } from '@/types/globalTypes';
 import ProductCard from '@/components/ProductCard';
 import { useGetBooksQuery } from '@/redux/features/bookCatalog/bookApis';
 import { useState } from 'react';
-import { Slice } from 'lucide-react';
 
 export default function Home() {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [search, setSearch] = useState('');
-  const { data, isSuccess } = useGetBooksQuery(search, {
+  const { data } = useGetBooksQuery(search, {
     refetchOnMountOrArgChange: true,
   });
-
-  console.log(data?.data);
 
   return (
     <>
