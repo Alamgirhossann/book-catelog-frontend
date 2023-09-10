@@ -27,7 +27,7 @@ export default function ProductCard({ product }: IProps) {
     await editBook(options);
   };
   const handleCreateWishList = async () => {
-    const { data } = await createWishList(product);
+    const data: any = await createWishList(product);
     setTimeout(() => {
       if (data?.success === true) {
         toast({
@@ -42,7 +42,7 @@ export default function ProductCard({ product }: IProps) {
   };
 
   const handleCreateCurrentlyReading = async () => {
-    const { data } = await createCurrentlyReading(product);
+    const data: any = await createCurrentlyReading(product);
     setTimeout(() => {
       if (data?.success === true) {
         toast({

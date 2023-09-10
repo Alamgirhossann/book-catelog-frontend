@@ -7,8 +7,7 @@ import { useGetBooksQuery } from '@/redux/features/bookCatalog/bookApis';
 import { useState } from 'react';
 
 export default function Home() {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [search, setSearch] = useState('');
+  const [search] = useState('');
   const { data } = useGetBooksQuery(search, {
     refetchOnMountOrArgChange: true,
   });
