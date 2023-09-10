@@ -4,9 +4,11 @@ import Login from '@/pages/Login';
 import NotFound from '@/pages/NotFound';
 import Home from '@/pages/Home';
 import Products from '@/pages/Products';
-import Checkout from '@/pages/Checkout';
 import Signup from '@/pages/Signup';
 import ProductDetails from '@/pages/ProductDetails';
+import PrivateRoute from './PrivateRoute';
+import AddNewBook from '@/pages/AddNewBook';
+import EditBooks from '@/pages/EditBooks';
 
 const routes = createBrowserRouter([
   {
@@ -18,16 +20,28 @@ const routes = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: '/products',
+        path: '/allbooks',
         element: <Products />,
       },
       {
-        path: '/product-details/:id',
+        path: '/book-details/:id',
         element: <ProductDetails />,
       },
       {
-        path: '/checkout',
-        element: <Checkout />,
+        path: '/addBook',
+        element: (
+          <PrivateRoute>
+            <AddNewBook />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: '/updateBook/:id',
+        element: (
+          <PrivateRoute>
+            <EditBooks />
+          </PrivateRoute>
+        ),
       },
     ],
   },
