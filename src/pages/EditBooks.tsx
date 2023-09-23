@@ -59,7 +59,7 @@ function EditBooks() {
                   <input
                     style={{ width: '70%' }}
                     className="my-1 text-center border-2 border-black"
-                    value={data.title}
+                    value={data?.title}
                     name="title"
                     id="title"
                     onChange={handleChange}
@@ -77,7 +77,7 @@ function EditBooks() {
                   <input
                     style={{ width: '70%' }}
                     className="my-1 text-center border-2 border-black"
-                    value={data.author}
+                    value={data?.author}
                     name="author"
                     id="author"
                     onChange={handleChange}
@@ -95,7 +95,7 @@ function EditBooks() {
                   <input
                     style={{ width: '70%' }}
                     className="my-1 text-center border-2 border-black"
-                    value={data.genre}
+                    value={data?.genre}
                     name="genre"
                     id="genre"
                     onChange={handleChange}
@@ -113,7 +113,7 @@ function EditBooks() {
                   <input
                     style={{ width: '70%' }}
                     className="my-1 text-center border-2 border-black"
-                    value={data.publicationYear}
+                    value={data?.publicationYear}
                     name="publicationYear"
                     id="publicationYear"
                     onChange={handleChange}

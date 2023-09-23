@@ -114,10 +114,12 @@ function AddNewBook() {
       </div>
       <div className="text-center">
         <div>
-          <button onClick={handleCreateBook} className="mx-1 mt-5 add">
+          <button
+            onClick={handleCreateBook}
+            className="mx-1 mt-5 add bg-black px-4 py-2 text-white"
+          >
             Create Book
           </button>
-          <button className="mx-1 mt-5 delete">Cancel</button>
         </div>
       </div>
     </div>
