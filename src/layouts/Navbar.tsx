@@ -18,7 +18,7 @@ export default function Navbar() {
   const handleLogout = () => {
     console.log('Logout');
     localStorage.removeItem('accessToken');
-    navigate('/');
+    navigate('/login');
   };
   useEffect(() => {
     const user = localStorage.getItem('accessToken');
