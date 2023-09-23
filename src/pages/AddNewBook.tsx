@@ -45,7 +45,7 @@ function AddNewBook() {
                 <div className="col-md-7 align-start">
                   <input
                     style={{ width: '70%' }}
-                    className="my-1"
+                    className="my-1 text-center border-2 border-black"
                     value={data.title}
                     name="title"
                     id="title"
@@ -63,7 +63,7 @@ function AddNewBook() {
                 <div className="col-md-7 align-start">
                   <input
                     style={{ width: '70%' }}
-                    className="my-1"
+                    className="my-1 text-center border-2 border-black"
                     value={data.author}
                     name="author"
                     id="author"
@@ -81,7 +81,7 @@ function AddNewBook() {
                 <div className="col-md-7 align-start">
                   <input
                     style={{ width: '70%' }}
-                    className="my-1"
+                    className="my-1 text-center border-2 border-black"
                     value={data.genre}
                     name="genre"
                     id="genre"
@@ -99,7 +99,7 @@ function AddNewBook() {
                 <div className="col-md-7 align-start">
                   <input
                     style={{ width: '70%' }}
-                    className="my-1"
+                    className="my-1 text-center border-2 border-black"
                     value={data.publicationYear}
                     name="publicationYear"
                     id="publicationYear"
