@@ -28,14 +28,17 @@ export default function ProductCard({ product }: IProps) {
   };
   const handleCreateWishList = async () => {
     const data: any = await createWishList(product);
+    // console.log(data.error.data.message);
+    console.log(data);
     setTimeout(() => {
-      if (data?.success === true) {
+      if (data?.data?.success === true) {
         toast({
           description: 'Book added to wish list',
         });
-      } else {
+      }
+      if (data?.error?.data?.message) {
         toast({
-          description: 'Book is allready exists on wishlist',
+          description: data.error.data.message,
         });
       }
     }, 500);
@@ -44,13 +47,14 @@ export default function ProductCard({ product }: IProps) {
   const handleCreateCurrentlyReading = async () => {
     const data: any = await createCurrentlyReading(product);
     setTimeout(() => {
-      if (data?.success === true) {
+      if (data?.data?.success === true) {
         toast({
-          description: 'Book added to currently reading list',
+          description: 'Book added to current reading list',
         });
-      } else {
+      }
+      if (data?.error?.data?.message) {
         toast({
-          description: 'Book is allready exists on currently reading list',
+          description: data.error.data.message,
         });
       }
     }, 500);
