@@ -10,6 +10,7 @@ import {
   DropdownMenuContent,
 } from '../components/ui/dropdown-menu';
 import { useEffect, useState } from 'react';
+import logo from '../assets/images/sample logo 1.png';
 
 export default function Navbar() {
   const [userTokent, setUserToken] = useState<string | null>('');
@@ -26,11 +27,11 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className="w-full h-16 fixed top backdrop-blur-lg z-10">
-      <div className="h-full w-full bg-white/60">
-        <div className="flex items-center justify-between w-full md:max-w-7xl h-full mx-auto ">
+    <nav className="w-full h-16 fixed top text-[#000] backdrop-blur-lg z-10 border-b border-[#8d27ae]">
+      <div className="h-full w-full bg-[#8d27ae]/30">
+        <div className="flex items-center justify-between w-full md:max-w-7xl h-full mx-auto px-4">
           <div>
-            <h1 className=" text-2xl">Book Catelog</h1>
+            <img src={logo} alt="logo" className="w-12 h-12" />
           </div>
           <div>
             <ul className="flex items-center">

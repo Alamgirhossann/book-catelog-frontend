@@ -1,4 +1,4 @@
-import { ChangeEvent, FormEvent, useState } from 'react';
+import { ChangeEvent, FormEvent, SetStateAction, useState } from 'react';
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
 import { Button } from './ui/button';
 import { Textarea } from './ui/textarea';
@@ -14,6 +14,7 @@ interface IProps {
 
 export default function ProductReview({ id }: IProps) {
   const [inputValue, setInputValue] = useState<string>('');
+
   const { data } = useGetSingleBookQuery(id, {
     refetchOnMountOrArgChange: true,
     pollingInterval: 5000,
@@ -22,6 +23,7 @@ export default function ProductReview({ id }: IProps) {
   const [postComment, { isLoading }] = usePostCommentMutation();
 
   console.log(isLoading);
+
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const options = {
@@ -33,24 +35,31 @@ export default function ProductReview({ id }: IProps) {
     setInputValue('');
   };
 
-  const handleChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
+  const handleChange = (event: {
+    target: { value: SetStateAction<string> };
+  }) => {
     setInputValue(event.target.value);
   };
 
   return (
     <div className="max-w-7xl mx-auto mt-5">
       <form className="flex gap-5 items-center" onSubmit={handleSubmit}>
-        <Textarea
-          className="min-h-[30px]"
-          onChange={handleChange}
+        <textarea
+          className="min-h-[30px] border border-[#8d27ae] w-full rounded-md"
+          style={{ outline: 'none' }}
           value={inputValue}
+          placeholder="Write Your Comment"
+          onChange={handleChange}
         />
-        <Button
+        <button
+          disabled={!inputValue}
           type="submit"
-          className="rounded-full h-10 w-10 p-2 text-[25px]"
+          className={`rounded-full h-10 w-10 p-2 text-[25px] ${
+            !inputValue ? 'bg-[#8d27ae]/20' : 'bg-[#8d27ae]'
+          } bg-[#8d27ae] text-white`}
         >
           <FiSend />
-        </Button>
+        </button>
       </form>
       <div className="mt-10">
         {data?.data?.reviews?.map((comment: string, index: number) => (
@@ -59,7 +68,10 @@ export default function ProductReview({ id }: IProps) {
               <AvatarImage src="https://github.com/shadcn.png" />
               <AvatarFallback>CN</AvatarFallback>
             </Avatar>
-            <p>{comment}</p>
+            <div>
+              <p>Name</p>
+              <p>{comment}</p>
+            </div>
           </div>
         ))}
       </div>

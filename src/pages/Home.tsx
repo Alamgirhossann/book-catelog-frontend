@@ -5,6 +5,16 @@ import { IProduct } from '@/types/globalTypes';
 import ProductCard from '@/components/ProductCard';
 import { useGetBooksQuery } from '@/redux/features/bookCatalog/bookApis';
 import { useState } from 'react';
+import TopBanner from '@/components/homeUI/TopBanner';
+import Catagory from '@/components/homeUI/Catagory';
+import EBook from '@/components/homeUI/EBook';
+import NewBooks from '@/components/homeUI/NewBooks';
+import FeaturedBook from '@/components/homeUI/FeaturedBook';
+import DiscountSection from '@/components/homeUI/DiscountSection';
+import Subscribe from '@/components/homeUI/Subscribe';
+import Blog from '@/components/homeUI/Blog';
+import TopRated from '@/components/homeUI/TopRated';
+import Testimonial from '@/components/homeUI/Testimonial';
 
 export default function Home() {
   const [search] = useState('');
@@ -14,6 +24,15 @@ export default function Home() {
 
   return (
     <>
+      <TopBanner />
+      <Catagory />
+      <NewBooks />
+      <EBook />
+      <TopRated />
+      <DiscountSection />
+      <FeaturedBook />
+      <Testimonial />
+      <Blog />
       <div className="col-span-9 grid grid-cols-3 gap-10 pb-20">
         {data?.data?.length > 0 ? (
           data?.data
@@ -34,7 +53,6 @@ export default function Home() {
           </Button>
         </div>
       </div>
-      <Footer />
     </>
   );
 }

@@ -6,6 +6,7 @@ import {
   useGetSingleBookQuery,
 } from '@/redux/features/bookCatalog/bookApis';
 import { toast } from '@/components/ui/use-toast';
+import coverImg from '../assets/images/Rectangle 11 (1).png';
 
 function EditBooks() {
   const { id } = useParams();
@@ -37,28 +38,27 @@ function EditBooks() {
   };
 
   return (
-    <div className="main-container">
-      <div className="container-fluid">
+    <div className="py-10 px-5 md:px-[5rem] lg:px-[15rem] ">
+      <div className="">
         <div className="text-center mb-4 font-bold text-2xl">
           {id ? (
-            <h1 className=" ">Update book Information</h1>
+            <h1 className=" text-[#8d27ae]">Update Book Information</h1>
           ) : (
-            <h1 className=" ">Enter book Information</h1>
+            <h1 className=" text-[#8d27ae]">Enter Book Information</h1>
           )}
         </div>
-        <div className="row ">
-          <div className="col-md-5 text-center">
+        <div className=" ">
+          <div className=" grid grid-cols-1 md:grid-cols-2 gap-5">
             <div>
-              <div className="row my-2">
-                <div className="col-md-5 align-end">
-                  <label className="font-bold " htmlFor="">
+              <div className=" my-2">
+                <div className=" ">
+                  <label className=" " htmlFor="">
                     Title
                   </label>
                 </div>
-                <div className="col-md-7 align-start">
+                <div className="w-full ">
                   <input
-                    style={{ width: '70%' }}
-                    className="my-1 text-center border-2 border-black"
+                    className="my-1 outline-none  min-h-[35px] border border-[#8d27ae] w-full rounded-md"
                     value={data?.title}
                     name="title"
                     id="title"
@@ -67,16 +67,15 @@ function EditBooks() {
                   />
                 </div>
               </div>
-              <div className="row my-2">
-                <div className="col-md-5 align-end">
-                  <label className=" font-bold" htmlFor="">
+              <div className=" my-2">
+                <div className=" ">
+                  <label className=" " htmlFor="">
                     Author
                   </label>
                 </div>
-                <div className="col-md-7 align-start">
+                <div className=" ">
                   <input
-                    style={{ width: '70%' }}
-                    className="my-1 text-center border-2 border-black"
+                    className="my-1 outline-none min-h-[35px] border border-[#8d27ae] w-full rounded-md"
                     value={data?.author}
                     name="author"
                     id="author"
@@ -85,16 +84,15 @@ function EditBooks() {
                   />
                 </div>
               </div>
-              <div className="row my-2">
-                <div className="col-md-5 align-end">
-                  <label className=" font-bold" htmlFor="">
+              <div className=" my-2">
+                <div className="">
+                  <label className=" " htmlFor="">
                     Genre
                   </label>
                 </div>
-                <div className="col-md-7 align-start">
+                <div className="">
                   <input
-                    style={{ width: '70%' }}
-                    className="my-1 text-center border-2 border-black"
+                    className="my-1 outline-none  min-h-[35px] border border-[#8d27ae] w-full rounded-md"
                     value={data?.genre}
                     name="genre"
                     id="genre"
@@ -103,16 +101,15 @@ function EditBooks() {
                   />
                 </div>
               </div>
-              <div className="row my-2">
-                <div className="col-md-5 align-end">
-                  <label className=" font-bold" htmlFor="">
+              <div className=" my-2">
+                <div className="">
+                  <label className=" " htmlFor="">
                     Publication Year
                   </label>
                 </div>
-                <div className="col-md-7 align-start">
+                <div className=" ">
                   <input
-                    style={{ width: '70%' }}
-                    className="my-1 text-center border-2 border-black"
+                    className="my-1 outline-none min-h-[35px] border border-[#8d27ae] w-full rounded-md"
                     value={data?.publicationYear}
                     name="publicationYear"
                     id="publicationYear"
@@ -122,16 +119,21 @@ function EditBooks() {
                 </div>
               </div>
             </div>
+            <div className="">
+              <div className=" h-full">
+                <img src={coverImg} alt="" className="h-[98%] w-full" />
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <div className="text-center">
-        <button
-          onClick={handleEditBook}
-          className="mx-1 mt-5 add bg-black px-4 py-2 text-white"
-        >
-          Update
-        </button>
+        <div className="">
+          <button
+            onClick={handleEditBook}
+            className=" mt-5 add bg-[#8d27ae] rounded-md px-4 py-2 text-white"
+          >
+            Update
+          </button>
+        </div>
       </div>
     </div>
   );

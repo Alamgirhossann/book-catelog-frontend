@@ -17,20 +17,12 @@ export default function Products() {
   };
 
   return (
-    <div className="grid grid-cols-12 max-w-7xl mx-auto relative ">
-      <div className="col-span-3 z mr-10 space-y-5 border rounded-2xl border-gray-200/80 p-5 self-start sticky top-16 h-[calc(100vh-80px)]">
-        <Button variant="default" className="mt-2 mb-2">
-          <Link to="/addBook"> Add New Book</Link>
-        </Button>
-        <input
-          className=" border-2 outline-1"
-          type="text"
-          onChange={handleSearch}
-          placeholder="search book"
-        />
+    <div className="">
+      <div className="">
+        <h1>Filter</h1>
       </div>
 
-      <div className="col-span-9 grid grid-cols-3 gap-10 pb-20">
+      <div className="grid md:grid-cols-3 grid-cols-1 gap-10 pb-20">
         {data?.data?.length > 0 ? (
           data?.data?.map((product: IProduct, i: number) => (
             <ProductCard key={i} product={product} />
@@ -41,7 +33,7 @@ export default function Products() {
           </p>
         )}
       </div>
-      <div className="flex items-center justify-between border-t border-gray-200 bg-white px-4 py-3 sm:px-6 mt-5">
+      {/* <div className="flex items-center justify-between border-t border-gray-200 bg-white px-4 py-3 sm:px-6 mt-5">
         <div className="flex flex-1 justify-between sm:hidden">
           <a
             href="#"
@@ -121,7 +113,7 @@ export default function Products() {
           //   </div>
           // </div>
         }
-      </div>
+      </div> */}
     </div>
   );
 }

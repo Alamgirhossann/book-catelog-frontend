@@ -50,7 +50,9 @@
     "react-icons": "^4.9.0",
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.11.2",
+    "react-simple-star-rating": "^5.1.7",
     "redux-logger": "^3.0.6",
+    "swiper": "^11.1.1",
     "tailwind-merge": "^1.13.0",
     "tailwindcss-animate": "^1.0.5"
   },

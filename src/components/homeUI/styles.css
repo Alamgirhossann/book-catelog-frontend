@@ -1,0 +1,48 @@
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+} */
+
+.cardTwo {
+    /* transition: transform 0.5s;
+    transform-style: preserve-3d; */
+    perspective: 1000px
+}
+
+.cardTwo:hover .back {
+    transform: rotateY(0deg);
+}
+
+.front,
+.back {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+}
+
+.back {
+    transform: rotateY(180deg);
+}
