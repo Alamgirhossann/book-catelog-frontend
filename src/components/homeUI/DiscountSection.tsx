@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import header_img from '../../assets/images/Unsplash.png';
+import TimeCountDown from './TimeCountDown';
 
 const DiscountSection = () => (
   <div className="flex justify-center md:items-center px-3 md:px-10 bg-[#8d27ae]">
@@ -15,19 +16,8 @@ const DiscountSection = () => (
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu
                 feugiat amet, libero ipsum enim pharetra hac.
               </p>
-              <div className="flex gap-4 text-white text-2xl mt-4">
-                <span>
-                  30 <br />
-                  Days
-                </span>
-                <span>
-                  3 <br />
-                  Hour
-                </span>
-                <span>
-                  3 <br />
-                  Min
-                </span>
+              <div className=" text-white text-2xl mt-4">
+                <TimeCountDown />
               </div>
             </div>
           </div>

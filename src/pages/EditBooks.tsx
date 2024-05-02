@@ -40,12 +40,8 @@ function EditBooks() {
   return (
     <div className="py-10 px-5 md:px-[5rem] lg:px-[15rem] ">
       <div className="">
-        <div className="text-center mb-4 font-bold text-2xl">
-          {id ? (
-            <h1 className=" text-[#8d27ae]">Update Book Information</h1>
-          ) : (
-            <h1 className=" text-[#8d27ae]">Enter Book Information</h1>
-          )}
+        <div className=" mb-4 font-bold text-[25px]">
+          <h1 className=" text-[#8d27ae]">Update Book Information</h1>
         </div>
         <div className=" ">
           <div className=" grid grid-cols-1 md:grid-cols-2 gap-5">

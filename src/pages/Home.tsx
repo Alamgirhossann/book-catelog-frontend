@@ -33,7 +33,7 @@ export default function Home() {
       <FeaturedBook />
       <Testimonial />
       <Blog />
-      <div className="col-span-9 grid grid-cols-3 gap-10 pb-20">
+      {/* <div className="col-span-9 grid grid-cols-3 gap-10 pb-20">
         {data?.data?.length > 0 ? (
           data?.data
             ?.slice(0, 10)
@@ -52,7 +52,7 @@ export default function Home() {
             <Link to="/allbooks">Browse all Books</Link>
           </Button>
         </div>
-      </div>
+      </div> */}
     </>
   );
 }

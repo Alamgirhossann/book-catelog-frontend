@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { IProduct } from '@/types/globalTypes';
 import { useCreateBookMutation } from '@/redux/features/bookCatalog/bookApis';
 import { toast } from '@/components/ui/use-toast';
+import coverImg from '../assets/images/dummy image.jpg';
 
 function AddNewBook() {
   const [createBook] = useCreateBookMutation();
@@ -28,25 +29,24 @@ function AddNewBook() {
   };
 
   return (
-    <div className="main-container">
-      <div className="container-fluid">
-        <div className="text-center mb-4">
-          <h1 className=" ">Enter book Information</h1>
+    <div className="py-10 px-5 md:px-[5rem] lg:px-[15rem] ">
+      <div className="">
+        <div className=" mb-4 font-bold text-[25px]">
+          <h1 className=" text-[#8d27ae]">Enter Book Information</h1>
         </div>
-        <div className="row ">
-          <div className="col-md-5 text-center">
+        <div className=" ">
+          <div className=" grid grid-cols-1 md:grid-cols-2 gap-5">
             <div>
-              <div className="row">
-                <div className="col-md-5 align-end">
+              <div className=" my-2">
+                <div className=" ">
                   <label className=" " htmlFor="">
                     Title
                   </label>
                 </div>
-                <div className="col-md-7 align-start">
+                <div className="w-full ">
                   <input
-                    style={{ width: '70%' }}
-                    className="my-1 text-center border-2 border-black"
-                    value={data.title}
+                    className="my-1 outline-none  min-h-[35px] border border-[#8d27ae] w-full rounded-md"
+                    value={data?.title}
                     name="title"
                     id="title"
                     onChange={handleChange}
@@ -54,17 +54,16 @@ function AddNewBook() {
                   />
                 </div>
               </div>
-              <div className="row">
-                <div className="col-md-5 align-end">
+              <div className=" my-2">
+                <div className=" ">
                   <label className=" " htmlFor="">
                     Author
                   </label>
                 </div>
-                <div className="col-md-7 align-start">
+                <div className=" ">
                   <input
-                    style={{ width: '70%' }}
-                    className="my-1 text-center border-2 border-black"
-                    value={data.author}
+                    className="my-1 outline-none min-h-[35px] border border-[#8d27ae] w-full rounded-md"
+                    value={data?.author}
                     name="author"
                     id="author"
                     onChange={handleChange}
@@ -72,17 +71,16 @@ function AddNewBook() {
                   />
                 </div>
               </div>
-              <div className="row">
-                <div className="col-md-5 align-end">
+              <div className=" my-2">
+                <div className="">
                   <label className=" " htmlFor="">
                     Genre
                   </label>
                 </div>
-                <div className="col-md-7 align-start">
+                <div className="">
                   <input
-                    style={{ width: '70%' }}
-                    className="my-1 text-center border-2 border-black"
-                    value={data.genre}
+                    className="my-1 outline-none  min-h-[35px] border border-[#8d27ae] w-full rounded-md"
+                    value={data?.genre}
                     name="genre"
                     id="genre"
                     onChange={handleChange}
@@ -90,17 +88,16 @@ function AddNewBook() {
                   />
                 </div>
               </div>
-              <div className="row">
-                <div className="col-md-5 align-end">
+              <div className=" my-2">
+                <div className="">
                   <label className=" " htmlFor="">
                     Publication Year
                   </label>
                 </div>
-                <div className="col-md-7 align-start">
+                <div className=" ">
                   <input
-                    style={{ width: '70%' }}
-                    className="my-1 text-center border-2 border-black"
-                    value={data.publicationYear}
+                    className="my-1 outline-none min-h-[35px] border border-[#8d27ae] w-full rounded-md"
+                    value={data?.publicationYear}
                     name="publicationYear"
                     id="publicationYear"
                     onChange={handleChange}
@@ -109,14 +106,17 @@ function AddNewBook() {
                 </div>
               </div>
             </div>
+            <div className="">
+              <div className=" h-full">
+                <img src={coverImg} alt="" className="h-[98%] w-full" />
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <div className="text-center">
-        <div>
+        <div className="">
           <button
             onClick={handleCreateBook}
-            className="mx-1 mt-5 add bg-black px-4 py-2 text-white"
+            className=" mt-5 add bg-[#8d27ae] rounded-md px-4 py-2 text-white"
           >
             Create Book
           </button>

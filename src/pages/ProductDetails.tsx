@@ -56,6 +56,11 @@ export default function ProductDetails() {
   return (
     <>
       <div className="py-10 px-5 md:px-[5rem]">
+        <div className="py-5">
+          <h1 className=" md:text-[20px] text-xl pb-10 text-[#8d27ae] font-bold">
+            Books/BookDetail
+          </h1>
+        </div>
         <div className="grid md:grid-cols-2 grid-cols-1 gap-2">
           <div>
             <div className="flex gap-2">
