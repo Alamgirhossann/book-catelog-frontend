@@ -2,10 +2,10 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 // import book from '../../assets/images/book.png';
-import book1 from '../../assets/images/book3 4 (1).png';
-import book2 from '../../assets/images/book16 1.png';
-import book3 from '../../assets/images/book3 4.png';
-import book4 from '../../assets/images/book4 4.png';
+// import book1 from '../../assets/images/book3 4 (1).png';
+// import book2 from '../../assets/images/book16 1.png';
+// import book3 from '../../assets/images/book3 4.png';
+// import book4 from '../../assets/images/book4 4.png';
 // import book5 from '../../assets/images/book.png';
 import './styles.css';
 
