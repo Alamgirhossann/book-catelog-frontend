@@ -28,7 +28,7 @@ export function LoginForm({ className, ...props }: UserAuthFormProps) {
   const [login, { data: loginData }] = useLoginMutation();
   console.log(loginData);
   const navigate = useNavigate();
-  
+
   const onSubmit = (data: LoginFormInputs) => {
     console.log(data);
     login({ email: data.email, password: data.password });

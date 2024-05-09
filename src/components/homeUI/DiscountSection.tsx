@@ -13,8 +13,8 @@ const DiscountSection = () => (
                 All books are 50% off now! Don't miss such a deal!
               </h1>
               <p className="md:text-xl text-md text-white">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu
-                feugiat amet, libero ipsum enim pharetra hac.
+                Save big on your favorite reads with our exclusive book price
+                discounts. Don't miss out, shop now!
               </p>
               <div className=" text-white text-2xl mt-4">
                 <TimeCountDown />

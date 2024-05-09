@@ -169,7 +169,7 @@ function TimeCountdown() {
   };
 
   const [timeLeft, setTimeLeft] = useState<any>(calculateTimeLeft());
-  console.log(timeLeft);
+  // console.log(timeLeft);
 
   useEffect(() => {
     const timer = setTimeout(() => {

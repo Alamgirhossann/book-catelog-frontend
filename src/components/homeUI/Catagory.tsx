@@ -78,22 +78,22 @@ import { Link } from 'react-router-dom';
 
 const cardData = [
   {
-    title: 'Higher Education',
+    title: 'Fiction',
     image: catagory1,
     content:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu feugiat amet, libero ipsum enim pharetra hac. Urna commodo, lacus ut mat,',
+      'Escape reality with our captivating fiction collection. Explore worlds of imagination, characters, and plot twists that will leave you mesmerized.',
   },
   {
     title: 'Management Books',
     image: catagory2,
     content:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu feugiat amet, libero ipsum enim pharetra hac. Urna commodo, lacus ut mat,',
+      'Unlock your leadership potential with expert insights. Elevate your management skills and drive success with our curated selection of books',
   },
   {
     title: 'Engineering Books',
     image: catagory3,
     content:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu feugiat amet, libero ipsum enim pharetra hac. Urna commodo, lacus ut mat,',
+      'Master the intricacies of engineering with our comprehensive collection. Dive into cutting-edge topics and expand your technical expertise effortlessly.',
   },
   // {
   //   title: 'Maintanence',
@@ -125,7 +125,7 @@ const Catagory = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
         {cardData.map((data, index) => (
           <div className="mb-3 ">
-            <Link to="/serviceList">
+            <Link to="/">
               <div className="h-full px-0 sm:mx-0">
                 {' '}
                 <div
@@ -152,7 +152,7 @@ const Catagory = () => {
         ))}
       </div>
       <div className="text-center mt-10">
-        <Link to="/serviceList">
+        <Link to="/">
           <button className="bg-[#fff] text-[#8d27ae]  py-2 rounded-lg active:bg-[#48105c]">
             <span className={` px-5 py-2`}>See More</span>
           </button>

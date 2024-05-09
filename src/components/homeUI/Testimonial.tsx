@@ -116,12 +116,12 @@ const Testimonial = () => {
               <div key={index}>
                 <div className="flex justify-center ">
                   <img
-                    className="border border-[#8d27ae]"
+                    className="border border-[#8d27ae] h-20 w-20 rounded-full my-2"
                     src={data.image}
                     alt=""
                   />
                 </div>
-                <h3 className="text-[#8d27ae]">{data.title}</h3>
+                <h3 className="text-[#8d27ae] py-2">{data.title}</h3>
                 <p className="text-[12px] font-normal">{data.content}</p>
               </div>
             </SwiperSlide>

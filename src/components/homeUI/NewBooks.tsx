@@ -16,7 +16,10 @@ import book4 from '../../assets/images/book4 4.png';
 import './styles.css';
 
 // import required modules
-import { FreeMode, Pagination } from 'swiper/modules';
+import { Pagination } from 'swiper/modules';
+import { useGetAllBooksQuery } from '@/redux/features/bookCatalog/bookApis';
+import ProductCard from '../ProductCard';
+import { IProduct } from '@/types/globalTypes';
 
 const bookData = [
   // {
@@ -64,6 +67,8 @@ const bookData = [
 ];
 
 const NewBooks = () => {
+  const { data } = useGetAllBooksQuery({});
+
   return (
     <>
       <div className="py-20 md:px-20 px-5">
@@ -74,7 +79,7 @@ const NewBooks = () => {
         </div>
         <Swiper
           slidesPerView={1}
-          spaceBetween={10}
+          spaceBetween={5}
           pagination={{
             clickable: true,
           }}
@@ -95,21 +100,27 @@ const NewBooks = () => {
           modules={[Pagination]}
           className="mySwiper"
         >
-          {bookData.map((data, index) => (
-            <SwiperSlide>
-              <div key={index}>
-                <div className="flex justify-center ">
-                  <img
-                    className="border border-[#8d27ae]"
-                    src={data.image}
-                    alt=""
-                  />
+          <div className="">
+            {data?.data?.map((product: IProduct, index: number) => (
+              <SwiperSlide>
+                <div key={index} className="my-2 w-full text-left">
+                  <ProductCard key={index} product={product} />
+
+                  {/* <div className="flex justify-center ">
+                    <img
+                      className="border border-[#8d27ae]"
+                      src={data.image}
+                      alt=""
+                    />
+                  </div>
+                  <h3 className="text-[#8d27ae]">{product.title}</h3>
+                  <p className="text-[12px] font-normal">
+                    {product.publicationYear}
+                  </p> */}
                 </div>
-                <h3 className="text-[#8d27ae]">{data.title}</h3>
-                <p className="text-[12px] font-normal">{data.content}</p>
-              </div>
-            </SwiperSlide>
-          ))}
+              </SwiperSlide>
+            ))}
+          </div>
         </Swiper>
       </div>
     </>

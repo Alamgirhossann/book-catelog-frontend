@@ -26,7 +26,7 @@ export default function ProductCard({ product }: IProps) {
   const [createCurrentlyReading] = useCreateCurrentlyReadingMutation();
   const [editBook] = useEditBookMutation();
 
-  console.log(product.finish, !product.finish);
+  // console.log(product.finish, !product.finish);
   const handleIsFinish = async () => {
     const options = {
       id: product._id,
@@ -37,7 +37,7 @@ export default function ProductCard({ product }: IProps) {
   const handleCreateWishList = async () => {
     const data: any = await createWishList(product);
     // console.log(data.error.data.message);
-    console.log(data);
+    // console.log(data);
     setTimeout(() => {
       if (data?.data?.success === true) {
         toast({
@@ -99,15 +99,15 @@ export default function ProductCard({ product }: IProps) {
           alt="Background Image"
         />
         <div className="absolute inset-0 bg-[#8d27ae] bg-opacity-30"></div>
-        <div className="absolute inset-0 flex flex-col justify-end px-6 py-4 text-white">
-          <Link to={`/book-details/${product._id}`} className="w-full">
-            <p>Title: {product.title}</p>
-            <p>Author: {product?.author}</p>
-            <p className="text-sm">Genre: {product?.genre}</p>
-            <p className="text-sm">
+        <div className="absolute inset-0 flex flex-col justify-end px-3 py-4 text-white">
+          <Link to={`/book-details/${product._id}`} className="w-full ">
+            <p className="text-[14px]">Title: {product.title}</p>
+            <p className="text-[14px]">Author: {product?.author}</p>
+            <p className=" text-[14px]">Genre: {product?.genre}</p>
+            <p className=" text-[14px]">
               publicationYear: {product?.publicationYear}
             </p>
-            <p className="text-sm">creator: {product?.creator}</p>
+            <p className=" text-[14px]">creator: {product?.creator.email}</p>
           </Link>
           <div className=" flex gap-1">
             <button title="Add wish list" onClick={handleCreateWishList}>

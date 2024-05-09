@@ -28,6 +28,10 @@ const bookCatalogApi = api.injectEndpoints({
       query: (searchTerm) => `/bookCatalog?searchTerm=${searchTerm}`,
       providesTags: ['allData'],
     }),
+    getAllBooks: builder.query({
+      query: () => `/bookCatalog/all-books`,
+      providesTags: ['allData'],
+    }),
     getSingleBook: builder.query({
       query: (id) => `/bookCatalog/${id}`,
     }),
@@ -70,4 +74,5 @@ export const {
   useSearchTermQuery,
   useCreateCurrentlyReadingMutation,
   useCreateWishListMutation,
+  useGetAllBooksQuery,
 } = bookCatalogApi;

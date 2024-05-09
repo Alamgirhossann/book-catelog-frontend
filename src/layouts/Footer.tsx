@@ -34,22 +34,34 @@ const Footer = () => {
               here, making it.
             </p>
             <div className="flex flex-row gap-4 mt-5">
-              <img src={fb} alt="facebook" className="w-6 h-6 cursor-pointer" />
-              <img
-                src={twitter}
-                alt="twitter"
-                className="w-6 h-6 cursor-pointer text-white"
-              />
-              <img
-                src={linkedin}
-                alt="linkedin"
-                className="w-6 h-6 cursor-pointer"
-              />
-              <img
-                src={youtube}
-                alt="instagram"
-                className="w-6 h-6 cursor-pointer"
-              />
+              <Link to={'https://www.facebook.com'} target="black">
+                <img
+                  src={fb}
+                  alt="facebook"
+                  className="w-6 h-6 cursor-pointer"
+                />
+              </Link>
+              <Link to={'https://www.x.com'} target="blank">
+                <img
+                  src={twitter}
+                  alt="twitter"
+                  className="w-6 h-6 cursor-pointer text-white"
+                />
+              </Link>
+              <Link to={'https://www.linkedin.com'} target="blank">
+                <img
+                  src={linkedin}
+                  alt="linkedin"
+                  className="w-6 h-6 cursor-pointer"
+                />
+              </Link>
+              <Link to={'https://www.youtube.com'} target="blank">
+                <img
+                  src={youtube}
+                  alt="instagram"
+                  className="w-6 h-6 cursor-pointer"
+                />
+              </Link>
             </div>
           </div>
           <div className="py-10 md:px-10 sm:py-0 tracking-widest leading-{32px}">
@@ -135,7 +147,7 @@ const Footer = () => {
                 <img src={message} alt="" className="w-6 h-6" />
               </p>
               <p className="md:text-[0.8rem] text-sm tracking-widest">
-                electron@gmail.com
+                info@gmail.com
               </p>
             </div>
           </div>

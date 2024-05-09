@@ -2,13 +2,18 @@ import ProductCard from '@/components/ProductCard';
 import { useGetBooksQuery } from '@/redux/features/bookCatalog/bookApis';
 import { IProduct } from '@/types/globalTypes';
 import { SetStateAction, useState } from 'react';
+import girdView from '../assets/images/icons8-menu-vertical-50 (2).png';
+import blockView from '../assets/images/icons8-ellipsis-50.png';
+import BlockProductCard from '@/components/BlockProductCard';
 
 export default function Products() {
   const [search, setSearch] = useState('');
-  console.log(search);
+  // console.log(search);
   const { data } = useGetBooksQuery(search, {
     refetchOnMountOrArgChange: true,
   });
+
+  console.log(data);
 
   const handleSearch = (e: { target: { value: SetStateAction<string> } }) => {
     setSearch(e.target.value);
@@ -39,18 +44,22 @@ export default function Products() {
           </h1>
         </div>
         <div className="">
-          <div className="flex items-center justify-center">
+          <div className="flex items-center justify-end gap-2">
             <button
               onClick={openModal}
-              className="bg-[#8d27ae] text-white font-bold py-2 px-4 rounded"
+              className="bg-white border border-[#8d27ae] text-[#8d27ae] font-bold py-2 px-4 rounded"
             >
               Advance Search
             </button>
             <button
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+              className="bg-white border border-[#8d27ae] font-bold py-2 px-3 rounded"
               onClick={toggleView}
             >
-              {isGrid ? 'Switch to Block View' : 'Switch to Grid View'}
+              {isGrid ? (
+                <img className="h-6" src={girdView} alt="" />
+              ) : (
+                <img className="h-6" src={blockView} alt="" />
+              )}
             </button>
             {isOpen && (
               <div className="fixed z-10 inset-0 overflow-y-auto flex items-start justify-center bg-black bg-opacity-50">
@@ -92,19 +101,36 @@ export default function Products() {
             )}
           </div>
         </div>
-        <div className="container mx-auto my-8">
-          <div className="flex justify-center mb-4"></div>
-          <div className={isGrid ? 'grid md:grid-cols-3 gap-4' : 'block'}>
-            {data?.data?.length > 0 ? (
-              data?.data?.map((product: IProduct, i: number) => (
-                <ProductCard key={i} product={product} />
-              ))
-            ) : (
-              <p className="text-red-500">
-                Please login to see your favorit books list
-              </p>
-            )}
-          </div>
+        <div className="my-8">
+          {isGrid ? (
+            <div className={'grid md:grid-cols-4 gap-4'}>
+              {data?.data?.length > 0 ? (
+                data?.data?.map((product: IProduct, i: number) => (
+                  <div className="my-2">
+                    <ProductCard key={i} product={product} />
+                  </div>
+                ))
+              ) : (
+                <p className="text-red-500">
+                  Please login to see your favorit books list
+                </p>
+              )}
+            </div>
+          ) : (
+            <div className={'block '}>
+              {data?.data?.length > 0 ? (
+                data?.data?.map((product: IProduct, i: number) => (
+                  <div className="my-2">
+                    <BlockProductCard key={i} product={product} />
+                  </div>
+                ))
+              ) : (
+                <p className="text-red-500">
+                  Please login to see your favorit books list
+                </p>
+              )}
+            </div>
+          )}
         </div>
 
         {/* <div className="grid md:grid-cols-3 grid-cols-1 gap-10 pb-20">

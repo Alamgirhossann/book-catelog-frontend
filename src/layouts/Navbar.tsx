@@ -11,10 +11,12 @@ import {
 } from '../components/ui/dropdown-menu';
 import { useEffect, useState } from 'react';
 import logo from '../assets/images/sample logo 1.png';
+import { jwtDecode } from 'jwt-decode';
 
 export default function Navbar() {
-  const [userTokent, setUserToken] = useState<string | null>('');
+  const [userTokent, setUserToken] = useState<any>('');
   const navigate = useNavigate();
+  console.log(userTokent);
 
   const handleLogout = () => {
     console.log('Logout');
@@ -23,8 +25,16 @@ export default function Navbar() {
   };
   useEffect(() => {
     const user = localStorage.getItem('accessToken');
-    setUserToken(user);
+    if (user) {
+      // Check if user is not null
+      const userData: any = jwtDecode(user);
+      setUserToken(userData);
+    }
   }, []);
+
+  // const token: any = localStorage.getItem('accessToken');
+
+  // console.log(userData);
 
   return (
     <nav className="w-full h-16 fixed top text-[#000] backdrop-blur-lg z-10 border-b border-[#8d27ae]">
@@ -45,13 +55,37 @@ export default function Navbar() {
                   <Link to="/allbooks">All Books</Link>
                 </Button>
               </li>
+              <li>
+                {userTokent ? (
+                  <div className="flex gap-3">
+                    <p>{userTokent?.userId}</p>
+
+                    <p className=" cursor-pointer" onClick={handleLogout}>
+                      Logout
+                    </p>
+                  </div>
+                ) : (
+                  <div className="flex">
+                    <li>
+                      <Button variant="link" asChild>
+                        <Link to="/login">Login</Link>
+                      </Button>
+                    </li>
+                    <li>
+                      <Button variant="link" asChild>
+                        <Link to="/signup">Sign Up</Link>
+                      </Button>
+                    </li>
+                  </div>
+                )}
+              </li>
               {/* <li>
                 <Button variant="ghost">
                   <HiOutlineSearch size="25" />
                 </Button>
               </li> */}
 
-              <li className="ml-5">
+              {/* <li className="ml-5">
                 <DropdownMenu>
                   <DropdownMenuTrigger className="outline-none">
                     <Avatar>
@@ -62,34 +96,43 @@ export default function Navbar() {
                   <DropdownMenuContent>
                     <DropdownMenuLabel>Account</DropdownMenuLabel>
                     <DropdownMenuSeparator />
-                    <DropdownMenuItem className="cursor-pointer">
+                    {/* <DropdownMenuItem className="cursor-pointer">
                       Profile
-                    </DropdownMenuItem>
-                    {!userTokent && (
-                      <>
-                        <Link to="/login">
-                          <DropdownMenuItem className="cursor-pointer">
-                            Login
-                          </DropdownMenuItem>
-                        </Link>
-                        <Link to="/signup">
-                          <DropdownMenuItem className="cursor-pointer">
-                            Sign up
-                          </DropdownMenuItem>
-                        </Link>
-                      </>
-                    )}
-                    {userTokent && (
-                      <DropdownMenuItem
-                        onClick={handleLogout}
-                        className="cursor-pointer"
-                      >
-                        Logout
-                      </DropdownMenuItem>
-                    )}
-                  </DropdownMenuContent>
-                </DropdownMenu>
-              </li>
+                    </DropdownMenuItem> */}
+              {
+                // !userTokent && (
+                //   <>
+                //     <Link to="/login">
+                //       <DropdownMenuItem className="cursor-pointer">
+                //         Login
+                //       </DropdownMenuItem>
+                //     </Link>
+                //     <Link to="/signup">
+                //       <DropdownMenuItem className="cursor-pointer">
+                //         Sign up
+                //       </DropdownMenuItem>
+                //     </Link>
+                //   </>
+                // )
+              }
+              {
+                // userTokent && (
+                //   <>
+                //     <DropdownMenuItem className="cursor-pointer">
+                //       {/* {userData.userId} */}
+                //     </DropdownMenuItem>
+                //     <DropdownMenuItem
+                //       onClick={handleLogout}
+                //       className="cursor-pointer"
+                //     >
+                //       Logout
+                //     </DropdownMenuItem>
+                //   </>
+                // )
+              }
+              {/* </DropdownMenuContent>
+                </DropdownMenu> */}
+              {/* </li>  */}
             </ul>
           </div>
         </div>

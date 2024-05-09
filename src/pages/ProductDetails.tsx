@@ -16,11 +16,15 @@ import notfinish from '../assets/images/icons8-finish-flag-50 (1).png';
 import edit from '../assets/images/icons8-edit-50 (1).png';
 import deleteIcon from '../assets/images/icons8-delete-50 (1).png';
 import { Rating } from 'react-simple-star-rating';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { jwtDecode } from 'jwt-decode';
 
 export default function ProductDetails() {
+  const [userTokent, setUserToken] = useState<any>('');
+
   const { id } = useParams();
   const { data } = useGetSingleBookQuery(id);
+  console.log(data);
   const [deleteBook] = useDeleteBookMutation();
   const navigate = useNavigate();
 
@@ -52,6 +56,15 @@ export default function ProductDetails() {
   const onPointerLeave = () => console.log('Leave');
   const onPointerMove = (value: number, index: number) =>
     console.log(value, index);
+
+  useEffect(() => {
+    const user = localStorage.getItem('accessToken');
+    if (user) {
+      // Check if user is not null
+      const userData: any = jwtDecode(user);
+      setUserToken(userData);
+    }
+  }, []);
 
   return (
     <>
@@ -138,30 +151,41 @@ export default function ProductDetails() {
             <p>{data?.data?.publicationYear}</p>
           </div>
         </div>
-        <div className="flex max-w-7xl mx-auto items-center ">
-          <div className="w-[50%] space-y-3">
-            <button
-              onClick={handleEditBook}
-              className=" me-1 py-2 px-3 bg-[#8d27ae] rounded-md"
-            >
-              <img
-                src={edit}
-                alt="edit icon"
-                className=" h-6 w-6 hover:-rotate-12"
-              />
-            </button>
-            <button
-              onClick={handleDeleteBook}
-              className="py-2 px-3 bg-[#8d27ae] rounded-md"
-            >
-              <img
-                src={deleteIcon}
-                alt="delete icon"
-                className=" h-6 w-6 hover:-rotate-12"
-              />
-            </button>
+        <div className="w-full flex parent">
+          <div className="bg-[#8d27ae] text-white py-2 px-3 div-1 w-[30%]">
+            <p>Creator</p>
+          </div>
+          <div className=" div-2 w-[70%] py-2 px-5 bg-[#8d27ae]/20">
+            <p>{data?.data?.creator.email}</p>
           </div>
         </div>
+        {data?.data?.creator.email == userTokent.userId && (
+          <div className="flex max-w-7xl mx-auto items-center ">
+            <div className="w-[50%] space-y-3">
+              <button
+                onClick={handleEditBook}
+                className=" me-1 py-2 px-3 bg-[#8d27ae] rounded-md"
+              >
+                <img
+                  src={edit}
+                  alt="edit icon"
+                  className=" h-6 w-6 hover:-rotate-12"
+                />
+              </button>
+              <button
+                onClick={handleDeleteBook}
+                className="py-2 px-3 bg-[#8d27ae] rounded-md"
+              >
+                <img
+                  src={deleteIcon}
+                  alt="delete icon"
+                  className=" h-6 w-6 hover:-rotate-12"
+                />
+              </button>
+            </div>
+          </div>
+        )}
+
         <ProductReview id={id!} />
       </div>
     </>
