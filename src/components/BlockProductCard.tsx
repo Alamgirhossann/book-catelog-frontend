@@ -1,6 +1,6 @@
 import { IProduct } from '@/types/globalTypes';
 import { toast } from './ui/use-toast';
-import { Button } from './ui/button';
+// import { Button } from './ui/button';
 import { Link } from 'react-router-dom';
 import {
   useCreateCurrentlyReadingMutation,
@@ -11,9 +11,9 @@ import {
 
 import cardImg from '../assets/images/book4 4.png';
 import reading from '../assets/images/icons8-reading-50 (2).png';
-import notReading from '../assets/images/icons8-reading-50 (1).png';
+// import notReading from '../assets/images/icons8-reading-50 (1).png';
 import wish from '../assets/images/icons8-love-50.png';
-import notWish from '../assets/images/icons8-love-50 (1).png';
+// import notWish from '../assets/images/icons8-love-50 (1).png';
 import finish from '../assets/images/icons8-finish-flag-50.png';
 import notfinish from '../assets/images/icons8-finish-flag-50 (1).png';
 

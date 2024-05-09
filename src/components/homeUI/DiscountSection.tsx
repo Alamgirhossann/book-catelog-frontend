@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import header_img from '../../assets/images/Unsplash.png';
 import TimeCountDown from './TimeCountDown';
 

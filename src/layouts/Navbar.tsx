@@ -1,14 +1,14 @@
 import { Link, useNavigate } from 'react-router-dom';
-import { Avatar, AvatarFallback, AvatarImage } from '../components/ui/avatar';
+// import { Avatar, AvatarFallback, AvatarImage } from '../components/ui/avatar';
 import { Button } from '../components/ui/button';
-import { DropdownMenuSeparator } from '../components/ui/dropdown-menu';
-import { DropdownMenuLabel } from '../components/ui/dropdown-menu';
-import {
-  DropdownMenuItem,
-  DropdownMenu,
-  DropdownMenuTrigger,
-  DropdownMenuContent,
-} from '../components/ui/dropdown-menu';
+// import { DropdownMenuSeparator } from '../components/ui/dropdown-menu';
+// import { DropdownMenuLabel } from '../components/ui/dropdown-menu';
+// import {
+//   DropdownMenuItem,
+//   DropdownMenu,
+//   DropdownMenuTrigger,
+//   DropdownMenuContent,
+// } from '../components/ui/dropdown-menu';
 import { useEffect, useState } from 'react';
 import logo from '../assets/images/sample logo 1.png';
 import { jwtDecode } from 'jwt-decode';
@@ -31,10 +31,6 @@ export default function Navbar() {
       setUserToken(userData);
     }
   }, []);
-
-  // const token: any = localStorage.getItem('accessToken');
-
-  // console.log(userData);
 
   return (
     <nav className="w-full h-16 fixed top text-[#000] backdrop-blur-lg z-10 border-b border-[#8d27ae]">

@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom';
-import header_img from '../../assets/images/banner.png';
-import { Input } from '../ui/input';
+// import { Link } from 'react-router-dom';
+// import header_img from '../../assets/images/banner.png';
+// import { Input } from '../ui/input';
 import { FiSend } from 'react-icons/fi';
 
 const Subscribe = () => {

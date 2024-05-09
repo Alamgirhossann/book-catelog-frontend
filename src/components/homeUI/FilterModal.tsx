@@ -1,4 +1,4 @@
-import React, { SetStateAction, useState } from 'react';
+import { SetStateAction, useState } from 'react';
 
 const FilterModal = () => {
   const [search, setSearch] = useState('');
@@ -56,6 +56,7 @@ const FilterModal = () => {
                 type="text"
                 onChange={handleSearch}
                 className="border outline-none"
+                value={search}
               />
             </div>
           </div>

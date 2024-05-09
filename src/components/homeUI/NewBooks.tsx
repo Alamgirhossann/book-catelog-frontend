@@ -1,10 +1,5 @@
-import React, { useRef, useState } from 'react';
-// Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
-
-// Import Swiper styles
 import 'swiper/css';
-// import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
 // import book from '../../assets/images/book.png';
 import book1 from '../../assets/images/book3 4 (1).png';
@@ -12,59 +7,57 @@ import book2 from '../../assets/images/book16 1.png';
 import book3 from '../../assets/images/book3 4.png';
 import book4 from '../../assets/images/book4 4.png';
 // import book5 from '../../assets/images/book.png';
-
 import './styles.css';
 
-// import required modules
 import { Pagination } from 'swiper/modules';
 import { useGetAllBooksQuery } from '@/redux/features/bookCatalog/bookApis';
 import ProductCard from '../ProductCard';
 import { IProduct } from '@/types/globalTypes';
 
-const bookData = [
-  // {
-  //   title: 'Higher Education',
-  //   image: book,
-  //   content:
-  //     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu feugiat amet, libero ipsum enim pharetra hac. Urna commodo, lacus ut mat,',
-  // },
-  {
-    title: 'Management Books',
-    image: book1,
-    content:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu feugiat amet, libero ipsum enim pharetra hac. Urna commodo, lacus ut mat,',
-  },
-  {
-    title: 'Engineering Books',
-    image: book2,
-    content:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu feugiat amet, libero ipsum enim pharetra hac. Urna commodo, lacus ut mat,',
-  },
-  {
-    title: 'Maintanence',
-    image: book3,
-    content:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu feugiat amet, libero ipsum enim pharetra hac. Urna commodo, lacus ut mat,',
-  },
-  {
-    title: 'Support',
-    image: book4,
-    content:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu feugiat amet, libero ipsum enim pharetra hac. Urna commodo, lacus ut mat,',
-  },
-  {
-    title: 'Support',
-    image: book4,
-    content:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu feugiat amet, libero ipsum enim pharetra hac. Urna commodo, lacus ut mat,',
-  },
-  // {
-  //   title: 'Electrical',
-  //   image: book5,
-  //   content:
-  //     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu feugiat amet, libero ipsum enim pharetra hac. Urna commodo, lacus ut mat,',
-  // },
-];
+// const bookData = [
+//   // {
+//   //   title: 'Higher Education',
+//   //   image: book,
+//   //   content:
+//   //     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu feugiat amet, libero ipsum enim pharetra hac. Urna commodo, lacus ut mat,',
+//   // },
+//   {
+//     title: 'Management Books',
+//     image: book1,
+//     content:
+//       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu feugiat amet, libero ipsum enim pharetra hac. Urna commodo, lacus ut mat,',
+//   },
+//   {
+//     title: 'Engineering Books',
+//     image: book2,
+//     content:
+//       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu feugiat amet, libero ipsum enim pharetra hac. Urna commodo, lacus ut mat,',
+//   },
+//   {
+//     title: 'Maintanence',
+//     image: book3,
+//     content:
+//       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu feugiat amet, libero ipsum enim pharetra hac. Urna commodo, lacus ut mat,',
+//   },
+//   {
+//     title: 'Support',
+//     image: book4,
+//     content:
+//       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu feugiat amet, libero ipsum enim pharetra hac. Urna commodo, lacus ut mat,',
+//   },
+//   {
+//     title: 'Support',
+//     image: book4,
+//     content:
+//       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu feugiat amet, libero ipsum enim pharetra hac. Urna commodo, lacus ut mat,',
+//   },
+//   // {
+//   //   title: 'Electrical',
+//   //   image: book5,
+//   //   content:
+//   //     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu feugiat amet, libero ipsum enim pharetra hac. Urna commodo, lacus ut mat,',
+//   // },
+// ];
 
 const NewBooks = () => {
   const { data } = useGetAllBooksQuery({});

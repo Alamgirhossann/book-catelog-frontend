@@ -1,10 +1,5 @@
-import React, { useRef, useState } from 'react';
-// Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
-
-// Import Swiper styles
 import 'swiper/css';
-// import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
 // import book from '../../assets/images/book.png';
 import book1 from '../../assets/images/book3 4 (1).png';
@@ -12,10 +7,8 @@ import book2 from '../../assets/images/book16 1.png';
 import book3 from '../../assets/images/book3 4.png';
 import book4 from '../../assets/images/book4 4.png';
 // import book5 from '../../assets/images/book.png';
-
 import './styles.css';
 
-// import required modules
 import { Autoplay, Pagination } from 'swiper/modules';
 
 const bookData = [

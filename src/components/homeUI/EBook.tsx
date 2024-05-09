@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import header_img from '../../assets/images/pexels-olha-ruskykh-5984619 1.png';
 import { useState } from 'react';
 

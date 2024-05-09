@@ -124,7 +124,7 @@ const Catagory = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
         {cardData.map((data, index) => (
-          <div className="mb-3 ">
+          <div className="mb-3 " key={index}>
             <Link to="/">
               <div className="h-full px-0 sm:mx-0">
                 {' '}

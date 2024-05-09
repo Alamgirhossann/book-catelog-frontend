@@ -1,5 +1,5 @@
 import ProductReview from '@/components/ProductReview';
-import { Button } from '@/components/ui/button';
+// import { Button } from '@/components/ui/button';
 import { toast } from '@/components/ui/use-toast';
 import {
   useDeleteBookMutation,
@@ -8,11 +8,11 @@ import {
 import { useNavigate, useParams } from 'react-router-dom';
 import bgImage from '../assets/images/Rectangle 5.png';
 import reading from '../assets/images/icons8-reading-50 (2).png';
-import notReading from '../assets/images/icons8-reading-50 (1).png';
+// import notReading from '../assets/images/icons8-reading-50 (1).png';
 import wish from '../assets/images/icons8-love-50.png';
-import notWish from '../assets/images/icons8-love-50 (1).png';
+// import notWish from '../assets/images/icons8-love-50 (1).png';
 import finish from '../assets/images/icons8-finish-flag-50.png';
-import notfinish from '../assets/images/icons8-finish-flag-50 (1).png';
+// import notfinish from '../assets/images/icons8-finish-flag-50 (1).png';
 import edit from '../assets/images/icons8-edit-50 (1).png';
 import deleteIcon from '../assets/images/icons8-delete-50 (1).png';
 import { Rating } from 'react-simple-star-rating';
@@ -43,19 +43,19 @@ export default function ProductDetails() {
     navigate(`/updateBook/${id}`);
   };
 
-  const [rating, setRating] = useState<number>(0);
+  // const [rating, setRating] = useState<number>(0);
 
-  // Catch Rating value
-  const handleRating = (rate: number) => {
-    setRating(rate);
+  // // Catch Rating value
+  // const handleRating = (rate: number) => {
+  //   setRating(rate);
 
-    // other logic
-  };
-  // Optinal callback functions
-  const onPointerEnter = () => console.log('Enter');
-  const onPointerLeave = () => console.log('Leave');
-  const onPointerMove = (value: number, index: number) =>
-    console.log(value, index);
+  //   // other logic
+  // };
+  // // Optinal callback functions
+  // const onPointerEnter = () => console.log('Enter');
+  // const onPointerLeave = () => console.log('Leave');
+  // const onPointerMove = (value: number, index: number) =>
+  //   console.log(value, index);
 
   useEffect(() => {
     const user = localStorage.getItem('accessToken');
